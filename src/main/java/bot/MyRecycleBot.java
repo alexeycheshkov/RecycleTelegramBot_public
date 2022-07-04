@@ -81,13 +81,15 @@ public class MyRecycleBot extends TelegramLongPollingBot {
                         execute(message);
                         execute(SendContact.builder().chatId(chatId).firstName("Александра").phoneNumber("+79198443019").build());
                         execute(SendContact.builder().chatId(chatId).firstName("Надежда").phoneNumber("+79225580545").build());
+                        execute(SendContact.builder().chatId(chatId).firstName("Татьяна").phoneNumber("+79033629888").build());
+                        execute(SendContact.builder().chatId(chatId).firstName("Кайрат").phoneNumber("+79619002342").build());
                         Keyboard.setLinkButtons(message);
                         message.setText("Мы в соц сетях:");
                         execute(message);
                         break;
                     case "О нас":
-                        message.setText(getTextByItem("about"));
                         Keyboard.setAboutLinkButtons(message);
+                        message.setText(getTextByItem("about"));
                         execute(message);
                         break;
                     case "Адреса":
