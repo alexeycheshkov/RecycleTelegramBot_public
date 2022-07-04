@@ -40,8 +40,6 @@ public class Keyboard {
         List<InlineKeyboardButton> buttonsFirstRow = new ArrayList<>();
         List<InlineKeyboardButton> buttonsSecondRow = new ArrayList<>();
         List<InlineKeyboardButton> buttonsThirdRow = new ArrayList<>();
-        List<InlineKeyboardButton> buttonsFourthRow = new ArrayList<>();
-        List<InlineKeyboardButton> buttonsFifthRow = new ArrayList<>();
 
         InlineKeyboardButton plastic = new InlineKeyboardButton("plastic");
         plastic.setText("Пластик");
@@ -56,23 +54,21 @@ public class Keyboard {
         InlineKeyboardButton glass = new InlineKeyboardButton("glass");
         glass.setText("Стекло");
         glass.setCallbackData("glass");
-        buttonsThirdRow.add(glass);
+        buttonsSecondRow.add(glass);
 
         InlineKeyboardButton paper = new InlineKeyboardButton("paper");
         paper.setText("Макулатура");
         paper.setCallbackData("paper");
-        buttonsFourthRow.add(paper);
+        buttonsThirdRow.add(paper);
 
         InlineKeyboardButton tetra = new InlineKeyboardButton("tetra");
         tetra.setText("Tetra-Pak");
         tetra.setCallbackData("tetra");
-        buttonsFifthRow.add(tetra);
+        buttonsThirdRow.add(tetra);
 
         keyboard.add(buttonsFirstRow);
         keyboard.add(buttonsSecondRow);
         keyboard.add(buttonsThirdRow);
-        keyboard.add(buttonsFourthRow);
-        keyboard.add(buttonsFifthRow);
         inlineKeyboardMarkup.setKeyboard(keyboard);
 
         message.setReplyMarkup(inlineKeyboardMarkup);
