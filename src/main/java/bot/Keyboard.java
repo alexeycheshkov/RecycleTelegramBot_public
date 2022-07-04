@@ -37,10 +37,11 @@ public class Keyboard {
     public static synchronized void setRecycleItemButtons(SendMessage message) {
         InlineKeyboardMarkup inlineKeyboardMarkup = new InlineKeyboardMarkup();
         List<List<InlineKeyboardButton>> keyboard = new ArrayList<>();
-        List<InlineKeyboardButton> buttonsFirstRow = new ArrayList<InlineKeyboardButton>();
-        List<InlineKeyboardButton> buttonsSecondRow = new ArrayList<InlineKeyboardButton>();
-        List<InlineKeyboardButton> buttonsThirdRow = new ArrayList<InlineKeyboardButton>();
-        List<InlineKeyboardButton> buttonsFourthRow = new ArrayList<InlineKeyboardButton>();
+        List<InlineKeyboardButton> buttonsFirstRow = new ArrayList<>();
+        List<InlineKeyboardButton> buttonsSecondRow = new ArrayList<>();
+        List<InlineKeyboardButton> buttonsThirdRow = new ArrayList<>();
+        List<InlineKeyboardButton> buttonsFourthRow = new ArrayList<>();
+        List<InlineKeyboardButton> buttonsFifthRow = new ArrayList<>();
 
         InlineKeyboardButton plastic = new InlineKeyboardButton("plastic");
         plastic.setText("Пластик");
@@ -62,20 +63,25 @@ public class Keyboard {
         paper.setCallbackData("paper");
         buttonsFourthRow.add(paper);
 
+        InlineKeyboardButton tetra = new InlineKeyboardButton("tetra");
+        tetra.setText("Tetra-Pak");
+        tetra.setCallbackData("tetra");
+        buttonsFifthRow.add(tetra);
+
         keyboard.add(buttonsFirstRow);
         keyboard.add(buttonsSecondRow);
         keyboard.add(buttonsThirdRow);
         keyboard.add(buttonsFourthRow);
+        keyboard.add(buttonsFifthRow);
         inlineKeyboardMarkup.setKeyboard(keyboard);
 
         message.setReplyMarkup(inlineKeyboardMarkup);
-
     }
 
     public static synchronized void setLinkButtons(SendMessage message) {
         InlineKeyboardMarkup inlineKeyboardMarkup = new InlineKeyboardMarkup();
         List<List<InlineKeyboardButton>> keyboard = new ArrayList<>();
-        List<InlineKeyboardButton> buttonsFirstRow = new ArrayList<InlineKeyboardButton>();
+        List<InlineKeyboardButton> buttonsFirstRow = new ArrayList<>();
 
         InlineKeyboardButton vkLink = new InlineKeyboardButton("vk");
         vkLink.setText("VK");
@@ -95,9 +101,12 @@ public class Keyboard {
     public static synchronized void setAboutLinkButtons(SendMessage message) {
         InlineKeyboardMarkup inlineKeyboardMarkup = new InlineKeyboardMarkup();
         List<List<InlineKeyboardButton>> keyboard = new ArrayList<>();
-        List<InlineKeyboardButton> buttonsFirstRow = new ArrayList<InlineKeyboardButton>();
-        List<InlineKeyboardButton> buttonsSecondRow = new ArrayList<InlineKeyboardButton>();
-        List<InlineKeyboardButton> buttonsThirdRow = new ArrayList<InlineKeyboardButton>();
+        List<InlineKeyboardButton> buttonsFirstRow = new ArrayList<>();
+        List<InlineKeyboardButton> buttonsSecondRow = new ArrayList<>();
+        List<InlineKeyboardButton> buttonsThirdRow = new ArrayList<>();
+        List<InlineKeyboardButton> buttonsForthRow = new ArrayList<>();
+        List<InlineKeyboardButton> buttonsFifthRow = new ArrayList<>();
+        List<InlineKeyboardButton> buttonsSixRow = new ArrayList<>();
 
         InlineKeyboardButton oh = new InlineKeyboardButton("oh");
         oh.setText("От хорового пения до сортировки мусора – один шаг");
@@ -108,13 +117,28 @@ public class Keyboard {
         InlineKeyboardButton oru = new InlineKeyboardButton("oru");
         oru.setText("11 орских семей уже начали разделять мусор по категориям");
         oru.setUrl("https://pda.orsk.ru/news/106648-11-orskih-semey-uje-nachali-razdelyat-musor-po-kategoriyam");
+        InlineKeyboardButton oru2 = new InlineKeyboardButton("oru2");
+        oru.setText("Орчане организовали сбор вторсырья");
+        oru.setUrl("https://orsk.ru/news/113522");
+        InlineKeyboardButton oh2 = new InlineKeyboardButton("oh2");
+        oru.setText("Как местный тетрапак до мегаполисов добирается");
+        oru.setUrl("https://hron.ru/news/read/68815");
+        InlineKeyboardButton oh3 = new InlineKeyboardButton("oh3");
+        oru.setText("Мусор в дело, или О том, как добровольцы «Чистого следа» учат раздельному сбору");
+        oru.setUrl("https://hron.ru/news/read/69699");
 
         buttonsFirstRow.add(oh);
         buttonsSecondRow.add(oru);
         buttonsThirdRow.add(go);
+        buttonsForthRow.add(oru2);
+        buttonsFifthRow.add(oh2);
+        buttonsSixRow.add(oh3);
         keyboard.add(buttonsFirstRow);
         keyboard.add(buttonsSecondRow);
         keyboard.add(buttonsThirdRow);
+        keyboard.add(buttonsForthRow);
+        keyboard.add(buttonsFifthRow);
+        keyboard.add(buttonsSixRow);
 
         inlineKeyboardMarkup.setKeyboard(keyboard);
         message.setReplyMarkup(inlineKeyboardMarkup);
